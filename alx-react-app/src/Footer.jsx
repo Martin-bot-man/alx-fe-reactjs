@@ -1,8 +1,8 @@
- const FooterJs = ()=>{
+ const Footer = ()=>{
     return(
         <footer>
            <p>© 2023 City Lovers</p>
         </footer>
     )
 }
-export default FooterJs;
+export default Footer
