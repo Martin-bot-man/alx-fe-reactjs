@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import './App.css'
-import WelcomeMessage from './components/WelcomeMessage'
-import Header from './components/Header';
-import MainContent from './components/MainContent'
-import Footer from './components/Footer';
+import WelcomeMessage from './WelcomeMessage'
+import Header from './Header';
+import MainContent from './MainContent'
+import Footer from './Footer';
 function App(){
 
   return (
@@ -11,6 +11,7 @@ function App(){
      <Header/>
      <MainContent/>
      <Footer/>
+     <WelcomeMessage/>
     </>
   )
 }
