@@ -1,4 +1,6 @@
-const UserProfile =(props)=>{
+import React from "react";
+import react,{useContext} from UserContext
+const UserProfile =()=>{
 return(
 <div>
     <h2>{props.name}</h2>
