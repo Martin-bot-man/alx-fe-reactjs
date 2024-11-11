@@ -6,6 +6,7 @@ import Home from './pages/Home'
 import Contact from './pages/Contact'
 import About from './pages/About'
 import Services from './pages/Services'
+import Navbar from "./components/Navbar";
 const App = () => {
   return (
     
