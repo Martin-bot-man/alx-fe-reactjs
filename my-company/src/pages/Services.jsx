@@ -3,7 +3,7 @@ function Services() {
     return (
       <div style={{ padding: '20px' }}>
         <h1>Our Services</h1>
-        <ul>
+        <ul style={{ListStyletype: 'none'}}>
           <li>Technology Consulting</li>
           <li>Market Analysis</li>
           <li>Product Development</li>
