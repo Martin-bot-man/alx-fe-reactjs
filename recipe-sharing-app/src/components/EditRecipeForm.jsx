@@ -16,7 +16,7 @@ const EditRecipeForm = ()=> {
         const foundRecipe = recipes.find(r => r.id ===recipeId);
         if(foundRecipe){
             setRecipe(foundRecipe);
-        }else{//else case incase recipe is not found(eg redirection)
+        }else{//( redirection)
             navigate('/');   
     }
 
