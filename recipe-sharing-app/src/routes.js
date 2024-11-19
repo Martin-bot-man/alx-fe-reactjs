@@ -1,6 +1,6 @@
 import React from 'react';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
-import RecipeDetails from './components/RecipeDetail';
+import RecipeDetails from './components/RecipeDetails';
 import App from './App';
 
 const Router = ()=> {
