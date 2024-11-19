@@ -25,8 +25,8 @@ const EditRecipeForm = ()=> {
         setRecipe({...recipe,[e.target.name]: e.target.value})
     };
 
-    const handleSubmit =(e) => {
-        e.preventDefault();
+    const handleSubmit =(event) => {
+        event.preventDefault();
         updateRecipe(recipe);
         navigate('/');//redirect after updating
     };
