@@ -1,18 +1,17 @@
-import React from 'react';
-import {BrowserRouter, Routes, Route} from 'react-router-dom';
-import RecipeDetails from './components/RecipeDetails';
-import App from './App';
+import AddRecipeForm from './components/AddRecipeForm'
+import RecipeList from './components/RecipeList'
+import RecipeDetails from './components/RecipeDetails'
+import './App.css'
 
-const Router = ()=> {
-    return (
-        <BrowserRouter>
-            <Routes>
-                <Route path ="/" element = {<App />} />
-                <Route path = "/recipes/ :recipeId" element= {<RecipeDetails />} />
-            </Routes>
+function routes() {
 
-        </BrowserRouter>
-    )
+  return (
+    <>
+      <RecipeList />
+      <AddRecipeForm />
+      <RecipeDetails />
+    </>
+  )
 }
 
-export default Router;
+export default routes;
