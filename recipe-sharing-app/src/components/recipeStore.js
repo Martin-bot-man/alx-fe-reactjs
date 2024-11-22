@@ -5,7 +5,8 @@ const useRecipeStore = create(set=>({
     addRecipe: (newRecipe)=> set(state=>({recipes: [...state.recipes, newRecipe]})),
     setRecipes: (recipes)=> set({recipes}),
     updateRecipe: (newUpdates)=> set({newUpdates}),
-    deleteRecipe: (deleteRecipe)=> set({deleteRecipe})
+    deleteRecipe: (deleteRecipe)=> set({deleteRecipe}),
+    setSearchTerm:(searchTerm)=> set({searchTerm}),
 
 }));
 export default useRecipeStore;
