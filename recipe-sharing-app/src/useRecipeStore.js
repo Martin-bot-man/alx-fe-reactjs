@@ -21,10 +21,10 @@ favorites:[],
   recommendations:[],
   generateRecommendations:()=> set(state=>{
     //mock implementation
-    const recommended = state.recipes.filter(recipe=> 
+    const Recommended = state.recipes.filter(recipe=> 
       state.favorites.includes(recipe.id)&& Math.random()> 0.5
     );
-  })
+  }),
   setSearchTerm: (term)=> set({searchTerm: term}),
 
   getfilteredRecipes: ()=> set(state => ({
