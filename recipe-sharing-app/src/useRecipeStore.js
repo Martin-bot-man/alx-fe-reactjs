@@ -3,7 +3,8 @@ import create from 'zustand'
 const useRecipeStore = create(set => ({
   recipes: [], 
   searchTerm:'',
-favorites:[],
+  favorites:[],
+  recommendations:[],
   addRecipe: (newRecipe) => set(state => ({ recipes: [...state.recipes, newRecipe] })),
   setRecipes: (recipes) => set({ recipes }), 
   deleteRecipe:(recipeId)=>set(state => ({
@@ -18,12 +19,13 @@ favorites:[],
   removeFavorite: (recipeId)=> set(state=> ({
     favorites:state.favorites.filter(id=>id != recipeId)
   })),
-  recommendations:[],
   generateRecommendations:()=> set(state=>{
     //mock implementation
-    const Recommended = state.recipes.filter(recipe=> 
+    const recommended = state.recipes.filter(recipe=> 
       state.favorites.includes(recipe.id)&& Math.random()> 0.5
     );
+
+    return { recommendations: recommended };
   }),
   setSearchTerm: (term)=> set({searchTerm: term}),
 
@@ -31,18 +33,7 @@ favorites:[],
     filteredRecipes :state.recipes.filter(recipe => recipe.title.toLowerCase().includes(state.searchTerm.toLowerCase())
   ),
   })),
-  const SearchBar =()=>{
-    const setSearchTerm = useRecipeStore(state => state.setSearchTerm);
-
-    return(
-      <input
-      type="text"
-      placeholder= "Search recipes..."
-      onChange = {(e) => setSearchTerm(e.target.value)}
-      />
-    )
-   
-  }
+ 
 }));
 
 export default useRecipeStore
