@@ -14,7 +14,40 @@ if(!username|| !email || !password){
 }
   }
     return (
-    <div>RegistrationForm</div>
+        <form onSubmit={handleSubmit}>
+            <div>
+                <label htmlFor="username">UserName:</label>
+                <input 
+                type='text'
+                id='username'
+                value={username}
+                onChange={(e) => setUserName(e.target.value)}
+                required/>
+            </div>
+            <div>
+                <label htmlFor="email">Email:</label>
+                <input
+                type= 'text'
+                id='email'
+                value= {email}
+                onChange={(e)=> setEmail(e.target.value)}
+                required
+                />
+            </div>
+            <div>
+                <label htmlFor="password">Password:</label>
+                <input 
+                type="text"
+                id="password"
+                value={password}
+                onChange= {(e)=>setPassword(e.target.value)}
+                required
+
+                />
+            </div>
+            <button type="submit">Register</button>
+
+        </form>
   )
 }
 
