@@ -12,7 +12,7 @@ const RegistrationForm = () => {
     event.preventDefault();
 
     const newErrors = {};
-    if(!username) newErrors.username = 'Username is required';
+    if (!username) newErrors.username = 'Username is required';
     if(!email) newErrors.email = 'Email is required';
     if(!password) newErrors.password = 'Password is required';
 
