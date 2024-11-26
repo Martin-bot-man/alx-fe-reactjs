@@ -29,7 +29,7 @@ if(!username|| !email || !password){
                 <input
                 type= 'text'
                 id='email'
-                value= {email}
+                value={email}
                 onChange={(e)=> setEmail(e.target.value)}
                 required
                 />
