@@ -14,9 +14,9 @@ const formikForm = () => {
             name: Yup.string()
             .min(2, 'Name must be atleast 2 characters')
             .required('Required'),
-            email:Yup.string()
-            .email('Invalid email address')
-            .required('Required'),
+            email:Yup.string().required('Required')
+            .email('Invalid email address'),
+            
             password:Yup.string()
             .min(8, 'Password is required')
             .matches(/[0-9]/, 'Password must contain at least one digit')
