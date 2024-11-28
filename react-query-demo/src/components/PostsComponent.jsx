@@ -9,6 +9,9 @@ const PostsComponent = () => {
 
     const {data: posts, isError, isLoading, fetchPosts} = useQuery('posts', getData, {
         cacheTime: 5* 60 * 1000,
+        staleTime: 30 * 1000,
+        refetchOnWindowFocus:false,
+        keepPreviousData: true,
     } );
 
     //error handling
