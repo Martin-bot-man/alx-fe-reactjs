@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
 const ProfileDetails =()=><h1>Profile Details</h1>;
-const Profilesettings =()=> <h1>Profile Settings</h1>
+const ProfileSettings =()=> <h1>Profile Settings</h1>
 
 const Profile = () => {
   return (
@@ -20,7 +20,7 @@ const Profile = () => {
         <div>
             <Routes>
                 <Route path="/details" element={<ProfileDetails/>} />
-                <Route path="/settings" element={<Profilesettings/>} />
+                <Route path="/settings" element={<ProfileSettings/>} />
             </Routes>
         </div>
     </div>
