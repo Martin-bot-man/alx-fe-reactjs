@@ -7,12 +7,12 @@ const PostsComponent = () => {
         return res.json();
     };
 
-    const {data: posts, error, isLoading, refetch} = useQuery('posts', getData, {
+    const {data: posts, isError, isLoading, fetchPosts} = useQuery('posts', getData, {
         cacheTime: 5* 60 * 1000,
     } );
 
     //error handling
-    if(error) return `An error has occurred: ${error.message}`;
+    if(isError) return `An error has occurred: ${isError.message}`;
     if (isLoading) return 'Loading posts...'
   return (
     <div>
@@ -22,7 +22,7 @@ const PostsComponent = () => {
             ))}
 
         </ul>
-        <button onClick={refetch}>Refetch Posts</button>
+        <button onClick={fetchPosts}>Refetch Posts</button>
 
         
     </div>
