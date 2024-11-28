@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 const ProfileDetail =()=><h1>Profile Details</h1>;
 const Profilesettings =()=> <h1>Profile Settings</h1>
 
-const ProfileDetails = () => {
+const Profile = () => {
   return (
     <div>
         <nav>
@@ -27,4 +27,4 @@ const ProfileDetails = () => {
   )
 }
 
-export default ProfileDetails
+export default Profile
