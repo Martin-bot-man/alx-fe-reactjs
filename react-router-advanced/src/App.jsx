@@ -1,5 +1,6 @@
 import {BrowserRouter as Router,Link, Routes,Route, useParams} from 'react-router-dom';
-import './App.css'
+import './App.css';
+import ProtectedRoute from './components/ProtectedRoute';
 
 const blogPosts =[
   {id:1, title :'My First Blog Post', content:'This is the content of my blog post.'},
@@ -49,6 +50,10 @@ function App() {
         {/* <Route path="/posts" element={<PostsComponent/>} /> */}
         <Route path="/about" element={<AboutComponent/>} />
         <Route path="/blog/:id" element={<BlogPost />} />
+        <Route path="/profile/*" element={
+          <ProtectedRoute element={<Profile />}/>
+        }
+        />
 
 
       </Routes>
