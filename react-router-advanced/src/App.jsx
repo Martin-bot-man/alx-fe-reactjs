@@ -6,8 +6,8 @@ const blogPosts =[
   {id:2, title :'Another Intersting Post', content: 'Some more interesting post'},
 ];
 const BlogPost =()=> {
-  const {postId} = useParams();//access the dynamic postId from the URL
-  const post = blogPosts.find(post => post.id === parseInt(Id, 10));
+  const {id} = useParams();//access the dynamic postId from the URL
+  const post = blogPosts.find(post => post.id === parseInt(id, 10));
   if(!post){
     return<div>Post not found</div>;
   }
@@ -48,7 +48,7 @@ function App() {
         <Route path="/" element ={<HomeComponent/>} />
         {/* <Route path="/posts" element={<PostsComponent/>} /> */}
         <Route path="/about" element={<AboutComponent/>} />
-        <Route path="/blog/:Id" element={<BlogPost />} />
+        <Route path="/blog/:id" element={<BlogPost />} />
 
 
       </Routes>
