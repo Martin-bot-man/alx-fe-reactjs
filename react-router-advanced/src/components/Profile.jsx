@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Routes, Route, Link } from 'react-router-dom';
 
 const ProfileDetails =()=><h1>Profile Details</h1>;
 const ProfileSettings =()=> <h1>Profile Settings</h1>
@@ -10,10 +10,10 @@ const Profile = () => {
         <nav>
             <ul>
                 <li>
-                    <link to="/profile/details" >Profile Details</link>
+                    <Link to="/profile/details" >Profile Details</Link>
                 </li>
                 <li>
-                    <link to="/profile/settings">Profile Settings</link>
+                    <Link to="/profile/settings">Profile Settings</Link>
                 </li>
             </ul>
         </nav>
