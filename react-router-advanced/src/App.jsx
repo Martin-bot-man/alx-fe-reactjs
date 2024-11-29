@@ -48,7 +48,7 @@ function App() {
         <Route path="/" element ={<HomeComponent/>} />
         {/* <Route path="/posts" element={<PostsComponent/>} /> */}
         <Route path="/about" element={<AboutComponent/>} />
-        <Route path="/blog/:postId" element={<BlogPost/>} />
+        <Route path="/blog/:postId" element={<BlogPost />} />
 
 
       </Routes>
