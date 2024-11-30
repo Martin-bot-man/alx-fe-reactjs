@@ -1,11 +1,13 @@
 import React from 'react'
 import {Navigate} from 'react-router-dom';
+import {useAuth} from '../contect/AuthContext';
 
-const isAuthenticated = true;
 
 
 const ProtectedRoute = ({element}) => {
-    isAuthenticated ? element: <Navigate to="/login" />
+    const{isAuthenticated} =useAuth();
+
+    isAuthenticated ? element: <Navigate to="/login"  replace />;
         
 }
 
