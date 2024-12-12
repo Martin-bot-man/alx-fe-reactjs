@@ -1,5 +1,6 @@
 import { BrowserRouter ,Routes, Route} from 'react-router-dom';
 import './App.css'
+import Search from './components/Search';
 
 function App() {
 
@@ -7,7 +8,6 @@ function App() {
     <BrowserRouter>
     <Routes>
       
-
     </Routes>
     </BrowserRouter>
   )
