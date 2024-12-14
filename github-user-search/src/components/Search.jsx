@@ -1,55 +1,34 @@
-import React, { useReducer } from 'react'
-import {useState} from react;
+import {useState} from 'react';
+import GitHubService from '../services/GitHubService';//(custom hook)
 
-const Search = () => {
-    const[username, setUsername] = useState('');
+const Search = ()=>{
+    const[username, setUsername] =useState('');
+    const {data, isLoading, error} =GitHubService(username);
 
-    const[userData, setUserData] = useState(null);
-    const [isLoading, setIsLoading]= useState(false);
-    cosnt[error,setError]= useState(null);
-    const handleSubmit = async (e)=> {e.preventDefault();
-        setIsLoading(true);
-        setError(null);
-        try{
-            const response = await axios.get(`https://api.github.com/users/${username}`);
-            setUserData(response.data);
-        
-        }
-        catch(error){
-            setError('Looks like we cant find the user');
-        }
-        finally{
-            setIsLoading(false);
-        }
-       
+    const handleSubmit=(e)=>{
+        e.preventDefault();
     };
-  return (
-    <div>
-        <form onSubmit={handleSubmit}>
-            <input 
-            type="text"
-            value={username}
-            onChange={(e)=>setUsername(e.target.value)}/>
-
-            <button type= "submit">Search</button>
-        </form>
-        {isLoading?(
-            <p>Loading...</p>
-        ):error?(
-            <p>{error}</p>
-        ):userData?(
-            <div>
-                <h2>{userData.login}</h2>
-                <img src={userData.avatar_url} alt={userData.login}/>
-                <P>{userData.bio}</P>
-                <a href={userData.html_url} target="_blank" rel="nooopener noreferrer">View GitHub Profile</a>
-            </div>
-        ):null
-    }
-    </div>
-  )
-    
-        
-}
-
-export default Search
+    return(
+        <div>
+            <form onSubmit={handleSubmit}>
+                <input type="text"
+                value={username}
+                onChange={(e)=>setUsername(e.target.value)} />
+                <button type="submit">Search</button>
+            </form>
+            {isLoading?(
+                <p>Loading...</p>
+            ) :error?(
+                <p>{error}</p>
+            ): userData?(
+                <div>
+                    <h2>{userDat.login}</h2>
+                    <img src={userData.avatar_url} alt={userData.login}/>
+                    <p>{userData.bio}</p>
+                    <a href={userData.html_url} targer="_blank" rel="noopener noreferrer">View Github Profile</a>
+                </div>
+            ):null}
+        </div>
+    )
+};
+export default Search;
